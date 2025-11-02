@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { DollarSign, Cpu, Globe } from "lucide-react";
 import { fadeUp, staggerContainer } from "../utils/motionPresets";
@@ -26,26 +26,6 @@ const metrics = [
     note: "Healthcare, Defense, Enterprise, Industrial",
   },
 ];
-
-function useCountUp(isActive, start = 1, end = 5, intervalMs = 500) {
-  const [count, setCount] = React.useState(null);
-
-  React.useEffect(() => {
-    if (!isActive) {
-      setCount(null);
-      return;
-    }
-    let current = start - 1;
-    const id = setInterval(() => {
-      current++;
-      setCount(current);
-      if (current === end) clearInterval(id);
-    }, intervalMs);
-    return () => clearInterval(id);
-  }, [isActive, start, end, intervalMs]);
-
-  return count;
-}
 
 function MetricCard({ label, value, displayValue, icon: Icon, note, active }) {
   const count = (active, value);
