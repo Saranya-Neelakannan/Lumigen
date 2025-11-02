@@ -2,6 +2,9 @@
   "name": "lumigen",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+  "node": "18.x"
+},
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.6.0",
     "@react-three/drei": "^10.7.6",
@@ -54,4 +57,5 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^3.3.1"
   }
+  
 }

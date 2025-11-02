@@ -13,7 +13,6 @@ import CredibilityIntro from "./components/CredibilityIntro";
 import ResearchLibrary from "./components/ResearchLibrary";
 import MetricsDashboard from "./components/MetricsDashboard";
 import BuildToOrder from "./components/BuildToOrder";
-import ModularSections from "./components/ResearchSection";
 
 export default function App() {
   return (
