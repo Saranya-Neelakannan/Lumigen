@@ -1,13 +1,26 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* small helpers */
+:root {
+  --accent-from: #6366F1;
+  --accent-to: #06B6D4;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* smooth gradient flow */
+.gradient-flow {
+  background: linear-gradient(90deg, rgba(99,102,241,0.06) 0%, rgba(6,182,212,0.04) 50%, rgba(99,102,241,0.06) 100%);
+  background-size: 200% 200%;
+  animation: gradientFlow 10s ease infinite;
+}
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-flow { animation: none; }
 }
