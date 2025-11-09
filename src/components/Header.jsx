@@ -1,14 +1,12 @@
-// src/components/Header.jsx
 import React, { useState } from "react";
-import logo from "../assets/lumigenLogo.jpg"; // replace with your file
-
+import logo from "../assets/lumigentranslogo.png";
 export default function Header() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="fixed w-full top-0 z-40 bg-white/40 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
+    <header className="fixed w-full top-0 z-40 bg-white/40 backdrop-blur-none ">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="Lumigen Labs" className="h-10 w-auto" />
+          <img src={logo} alt="Lumigen Labs" className="h-16 w-auto " />
           <span className="text-lg font-semibold text-textDark">
             Lumigen Labs
           </span>
@@ -18,8 +16,8 @@ export default function Header() {
           <a href="#about" className="hover:text-accentFrom transition">
             About
           </a>
-          <a href="#solutions" className="hover:text-accentFrom transition">
-            Solutions
+          <a href="#products" className="hover:text-accentFrom transition">
+            Products
           </a>
           <a href="#research" className="hover:text-accentFrom transition">
             Research
@@ -59,10 +57,10 @@ export default function Header() {
             <a href="#about" className="py-2">
               About
             </a>
-            <a href="#solutions" className="py-2">
-              Solutions
+            <a href="#products" className="py-2">
+              Products
             </a>
-            <a href="#research" className="py-2">
+            <a href="#research-library" className="py-2">
               Research
             </a>
             <a href="#contact" className="py-2">

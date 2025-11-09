@@ -1,49 +1,48 @@
-// ResearchLibrary.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../utils/motionPresets";
 
-/**
- * ResearchLibrary.jsx
- * - Grid of research/paper cards
- * - Each card: title, short excerpt, tags, link placeholder
- */
-
 const papers = [
   {
-    title: "Recommendation: The Right LLM for the Job",
+    title: "A Comprehensive Survey on Retrieval Methods in Recommender Systems",
+    tag: "Survey",
+    excerpt:
+      "An in-depth review of techniques for candidate retrieval approaches in modern recommender systems.",
+    href: "https://arxiv.org/abs/2407.21022v1",
+    published: "11 Oct 2025",
+  },
+  {
+    title:
+      "Are We Asking the Right Questions? On Ambiguity in Natural Language Queries for Tabular Data Analysis",
     tag: "Paper",
     excerpt:
-      "A parameter-by-parameter breakdown for selecting LLMs by task and constraints.",
-    href: "#",
+      "Discussion of cooperative query frameworks to address ambiguity in natural language interfaces for tabular analysis.",
+    href: "https://arxiv.org/pdf/2511.04584.pdf",
+    published: "6 Nov 2025",
   },
   {
-    title: "Benchmarking Orchestration Frameworks",
-    tag: "Benchmark",
+    title:
+      "Post-Training LLMs as Better Decision-Making Agents: A Regret-Minimization Approach",
+    tag: "Research",
     excerpt:
-      "Comparative evaluation of multi-agent orchestration: LangGraph vs. Autokool.",
-    href: "#",
+      "Investigating methods to improve large language models for autonomous decision-making using regret minimization.",
+    href: "https://arxiv.org/pdf/2511.04393.pdf",
+    published: "6 Nov 2025",
   },
   {
-    title: "Hardware Optimization Studies",
+    title:
+      "Speed at the Cost of Quality? The Impact of LLM Agent Assistance on Software Development",
     tag: "Study",
     excerpt:
-      "Empirical analysis of throughput & cost across GPU families for agentic workloads.",
-    href: "#",
+      "Analyzing trade-offs between accelerated development and quality when integrating LLM-based agent assistance.",
+    href: "https://arxiv.org/pdf/2511.04427.pdf",
+    published: "6 Nov 2025",
   },
-  {
-    title: "Neural Decoding: Non-Invasive Pipelines",
-    tag: "Paper",
-    excerpt:
-      "Methods for signal processing and simulation in brain-interface prototypes.",
-    href: "#",
-  },
-  // add more items as needed
 ];
 
 export default function ResearchLibrary() {
   return (
-    <section id="research-library" className="py-16 px-6 md:px-12 bg-gray-50">
+    <section id="research" className="py-16 px-6 md:px-12 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           variants={fadeUp}
@@ -56,9 +55,8 @@ export default function ResearchLibrary() {
             Public Expertise & Research
           </h2>
           <p className="text-gray-600 mt-3 max-w-3xl">
-            Access our library of technical papers, comparative studies and
-            benchmark reports. Each item links to reproducible artifacts and
-            datasets where available.
+            Access our curated library of technical papers, surveys, and studies
+            reflecting our deep technical contributions and thought leadership.
           </p>
         </motion.div>
 
@@ -86,7 +84,6 @@ export default function ResearchLibrary() {
                   <p className="text-sm text-gray-600 mt-2">{p.excerpt}</p>
                 </div>
                 <div className="ml-4">
-                  {/* placeholder thumbnail / icon */}
                   <div className="w-14 h-14 rounded-md bg-gradient-to-br from-indigo-50 to-teal-50 flex items-center justify-center">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                       <path
@@ -106,9 +103,11 @@ export default function ResearchLibrary() {
               </div>
 
               <div className="mt-4 flex items-center justify-between">
-                <div className="text-xs text-gray-500">Published • 2024</div>
+                <div className="text-xs text-gray-500">{p.published}</div>
                 <a
                   href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm text-indigo-600 font-medium hover:underline"
                 >
                   Read paper →
@@ -117,15 +116,6 @@ export default function ResearchLibrary() {
             </motion.article>
           ))}
         </motion.div>
-
-        <div className="mt-8 text-center">
-          <a
-            href="#research"
-            className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-teal-400 text-white shadow"
-          >
-            View Research & Insights
-          </a>
-        </div>
       </div>
     </section>
   );

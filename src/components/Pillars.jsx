@@ -1,6 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../utils/motionPresets";
+import Pillar1 from "../assets/BuildtoOrder.jpg";
+import Pillar2 from "../assets/BrainInterface.jpg";
+import Pillar3 from "../assets/FullStack.jpg";
+import Pillar4 from "../assets/OpenEngineering.jpg";
+
+const pillarImages = [Pillar1, Pillar2, Pillar3, Pillar4];
 
 const cards = [
   {
@@ -24,12 +30,9 @@ const cards = [
 
 export default function Pillars() {
   return (
-    <section className="relative py-20 bg-gradient-to-b from-white via-gray-50 to-gray-100 overflow-hidden">
-      {/* Subtle architectural background */}
-      <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/brick-wall-dark.png')] bg-repeat"></div>
-
+    <section className="py-20 bg-gradient-to-b from-white via-gray-50 to-gray-100 overflow-hidden">
       <motion.div
-        className="max-w-7xl mx-auto px-6 md:px-12 relative z-10"
+        className="max-w-5xl mx-auto px-4 md:px-8"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
@@ -37,36 +40,46 @@ export default function Pillars() {
       >
         <motion.h3
           variants={fadeUp}
-          className="text-3xl font-bold text-gray-800 text-center mb-12 tracking-tight"
+          className="text-4xl font-extrabold text-gray-900 text-center mb-16 tracking-tight"
         >
-          The Four Pillars of Lumigen
+          Our Pillars of Excellence
         </motion.h3>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex flex-col gap-16">
           {cards.map((c, i) => (
             <motion.div
               key={i}
               variants={fadeUp}
-              whileHover={{ y: -8, scale: 1.03 }}
-              className="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 group"
+              className={`flex flex-col md:flex-row items-stretch justify-center gap-8 ${
+                i % 2 === 1 ? "md:flex-row-reverse" : ""
+              }`}
             >
-              {/* Pillar dome top */}
-              <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-20 h-10 bg-gradient-to-b from-gray-200 to-gray-300 rounded-t-full shadow-inner"></div>
-
-              {/* Brick texture background inside pillar */}
-              <div className="bg-[url('https://www.transparenttextures.com/patterns/brick-wall.png')] bg-repeat bg-cover p-6 rounded-2xl flex flex-col justify-between h-full">
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-800 text-center mb-3">
+              {/* Content Box with accent background */}
+              <div className="relative flex-1 bg-white rounded-3xl border border-gray-200 shadow-lg p-8 flex flex-col justify-center min-w-[180px] transition-transform hover:scale-[1.03] hover:shadow-2xl cursor-pointer overflow-hidden">
+                <div className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-tr from-blue-200 via-blue-300 to-blue-400 rounded-full opacity-20 blur-3xl pointer-events-none" />
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-tr from-purple-200 via-purple-300 to-purple-400 rounded-full opacity-15 blur-3xl pointer-events-none" />
+                <div className="flex items-center mb-4 space-x-4">
+                  {c.icon}
+                  <h4 className="text-2xl font-bold text-blue-800">
                     {c.title}
                   </h4>
-                  <p className="text-sm text-gray-600 text-center leading-relaxed">
-                    {c.desc}
-                  </p>
                 </div>
+                <p className="text-base leading-relaxed text-gray-700">
+                  {c.desc}
+                </p>
+                <div className="mt-4 w-16 h-1 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full" />
               </div>
 
-              {/* Base pedestal shadow */}
-              <div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-t from-gray-300 to-gray-200 rounded-b-2xl"></div>
+              {/* Image Box */}
+              <div className="flex-1 flex items-center justify-center">
+                <div className="w-full h-full min-h-[200px] md:min-h-0 flex items-center justify-center rounded-3xl border border-blue-300 shadow-lg bg-gradient-to-br from-blue-50 via-white to-blue-100 p-1 transition-transform hover:scale-[1.05] hover:shadow-2xl cursor-pointer overflow-hidden">
+                  <img
+                    src={pillarImages[i]}
+                    alt={`Pillar ${i + 1}`}
+                    className="w-full h-full rounded-2xl object-cover max-h-72"
+                  />
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

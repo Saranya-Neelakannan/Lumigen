@@ -4,26 +4,26 @@ import { motion } from "framer-motion";
 // Sample image imports or URLs (replace with real in your app)
 import ProvenImage from "../assets/proven.jpg";
 import TransparentImage from "../assets/ai-agents.svg";
-import EthicalImage from "../assets/ai-ethics.svg";
+import EthicalImage from "../assets/ethics.jpg";
 
 const beliefs = [
   {
     title: "Proven > Promised",
-    body: "We publish methodologies, results and reproducible artifacts so our claims are verifiable.",
+    body: "    We publish methodologies, results and reproducible artifacts so our claims are verifiable.",
     iconColor: "#6366F1",
     image: ProvenImage,
     alt: "Proven > Promised Illustration",
   },
   {
     title: "Transparent Engineering",
-    body: "Designs, benchmarks and pipelines are auditable: no black boxes, only documented systems.",
+    body: "    Designs, benchmarks and pipelines are auditable: no black boxes, only documented systems.",
     iconColor: "#06B6D4",
     image: TransparentImage,
     alt: "Transparent Engineering Illustration",
   },
   {
     title: "Ethical, Responsible Scale",
-    body: "We bake governance and safety checks into deployments to ensure long-term reliability.",
+    body: "    We bake governance and safety checks into deployments to ensure long-term reliability.",
     iconColor: "#22C55E",
     image: EthicalImage,
     alt: "Ethical Responsible Scale Illustration",
