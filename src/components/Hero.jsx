@@ -8,7 +8,6 @@ export default function Hero() {
 
   const [showModal, setShowModal] = useState(false);
 
-  // For accessibility: trap focus inside modal when open
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -63,10 +62,10 @@ export default function Hero() {
           aria-hidden
         />
       )}
-      <div className="absolute inset-0 " />
+      <div className="absolute inset-0"></div>
 
       <motion.div
-        className="relative z-20 max-w-5xl px-6 md:px-12 pt-28 pb-16 w-full"
+        className="relative z-20 max-w-5xl px-4 sm:px-6 md:px-12 pt-28 pb-16 w-full"
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
@@ -80,7 +79,7 @@ export default function Hero() {
 
         <motion.h1
           variants={fadeUp}
-          className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-textDark leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-textDark leading-tight"
         >
           Architecting the Future of Intelligence
         </motion.h1>
@@ -110,7 +109,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Modal Contact Form */}
       {showModal && (
         <div
           role="dialog"
@@ -122,10 +120,9 @@ export default function Hero() {
         >
           <div
             ref={modalRef}
-            className="bg-white rounded-xl shadow-xl max-w-lg w-full p-8 relative"
+            className="bg-white rounded-xl shadow-xl max-w-lg w-full p-6 sm:p-8 relative"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close button */}
             <button
               aria-label="Close contact form"
               className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-3xl font-bold"
@@ -142,7 +139,7 @@ export default function Hero() {
             </h2>
 
             <form
-              action="https://formspree.io/f/mwkajnly" // Replace with your Formspree ID
+              action="https://formspree.io/f/mwkajnly"
               method="POST"
               className="space-y-6"
             >
@@ -153,8 +150,7 @@ export default function Hero() {
                   name="name"
                   required
                   placeholder="Your name"
-                  className="m-1 block w-full rounded-md border-gray-300 shadow-sm
-    focus:outline-none focus:ring-2 p-1 focus:ring-blue-500 focus:border-blue-500"
+                  className="m-1 block w-full rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring-2 p-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </label>
 
@@ -165,8 +161,7 @@ export default function Hero() {
                   name="email"
                   required
                   placeholder="you@example.com"
-                  className="m-1 p-1 block w-full rounded-md border-gray-300 shadow-sm
-    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="m-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </label>
 
@@ -177,8 +172,7 @@ export default function Hero() {
                   rows="5"
                   required
                   placeholder="Your message"
-                  className="mt-2 block w-full rounded-lg border border-gray-400 shadow-sm px-4 py-3
-    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition resize-none"
+                  className="mt-2 block w-full rounded-lg border border-gray-400 shadow-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition resize-none"
                 />
               </label>
 

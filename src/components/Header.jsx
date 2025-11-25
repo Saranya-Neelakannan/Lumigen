@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import logo from "../assets/lumigentranslogo.png";
+
 export default function Header() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="fixed w-full top-0 z-40 bg-white/40 backdrop-blur-none ">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-3 flex items-center justify-between">
+    <header className="fixed w-full top-0 z-40 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="Lumigen Labs" className="h-16 w-auto " />
-          <span className="text-lg font-semibold text-textDark">
-            Lumigen Labs
-          </span>
+          <img src={logo} alt="Lumigen Labs" className="h-12 sm:h-16 w-auto" />
+          <span className="text-lg font-semibold text-textDark">Lumigen Labs</span>
         </div>
 
         <nav className="hidden md:flex items-center gap-8 text-sm text-textDark/80">
@@ -33,7 +32,7 @@ export default function Header() {
           </a>
         </nav>
 
-        {/* mobile */}
+        {/* mobile menu button */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden p-2 rounded-md border border-gray-200"
@@ -68,7 +67,7 @@ export default function Header() {
             </a>
             <a
               href="#work"
-              className="py-2 inline-block rounded-full text-white bg-gradient-to-r from-accentFrom to-accentTo px-4 py-2 text-center"
+              className="py-2 inline-block rounded-full text-white bg-gradient-to-r from-accentFrom to-accentTo px-4 text-center"
             >
               Get Started
             </a>

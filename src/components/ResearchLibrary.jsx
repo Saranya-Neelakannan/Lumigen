@@ -42,7 +42,7 @@ const papers = [
 
 export default function ResearchLibrary() {
   return (
-    <section id="research" className="py-16 px-6 md:px-12 bg-gray-50">
+    <section id="research" className="py-16 px-4 sm:px-6 md:px-12 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           variants={fadeUp}
@@ -78,9 +78,7 @@ export default function ResearchLibrary() {
                   <div className="text-xs uppercase tracking-wider text-indigo-600 font-semibold mb-2">
                     {p.tag}
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {p.title}
-                  </h3>
+                  <h3 className="text-lg font-semibold text-gray-900">{p.title}</h3>
                   <p className="text-sm text-gray-600 mt-2">{p.excerpt}</p>
                 </div>
                 <div className="ml-4">

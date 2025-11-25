@@ -1,13 +1,6 @@
-// src/components/FullStackAI.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeUp, slideUp } from "../utils/motionPresets";
-
-/**
- * FullStackAI.jsx
- * - Uses inline SVGs instead of react-icons to avoid extra deps.
- * - Uses fadeUp and slideUp from utils/motionPresets (which you have).
- */
 
 const InlineDocker = ({ className = "w-6 h-6" }) => (
   <svg
@@ -109,8 +102,8 @@ export default function FullStackAI() {
   ];
 
   return (
-    <section className="relative py-20 px-6 md:px-16 bg-white">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section className="relative py-20 px-4 sm:px-6 md:px-16 bg-white">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left */}
         <motion.div
           variants={fadeUp}
@@ -119,7 +112,7 @@ export default function FullStackAI() {
           viewport={{ once: true, amount: 0.3 }}
           className="space-y-6"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900">
             Full-Stack AI Productivity Ecosystem
           </h2>
           <p className="text-gray-600 max-w-xl">
@@ -156,7 +149,7 @@ export default function FullStackAI() {
               devops patterns, and reproducible deployments — with transparent
               benchmarks and operational governance.
             </p>
-            <div className="mt-4 flex gap-4 items-center">
+            <div className="mt-4 flex gap-4 items-center flex-wrap">
               {/* small icon chips */}
               <div className="flex items-center gap-2 bg-white border border-gray-100 p-2 rounded-md">
                 <InlineTorch className="w-5 h-5" />{" "}
@@ -180,39 +173,33 @@ export default function FullStackAI() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="relative flex items-center justify-center"
+          className="relative flex items-center justify-center mt-12 md:mt-0"
         >
           <div className="relative">
             <div className="absolute -inset-16 rounded-full bg-gradient-to-r from-indigo-200 to-cyan-200 opacity-40 blur-3xl" />
             <div className="relative z-10 flex flex-col items-center">
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 w-64 text-center shadow-lg">
-                <div className="text-sm font-medium text-gray-800">
-                  AI Models
-                </div>
+              <div className="bg-white rounded-2xl border border-gray-100 p-6 w-56 sm:w-64 text-center shadow-lg">
+                <div className="text-sm font-medium text-gray-800">AI Models</div>
                 <div className="text-xs text-gray-500 mt-2">
                   Model libraries & agentic stacks
                 </div>
               </div>
 
               <div
-                className="bg-white rounded-2xl border border-gray-100 p-6 w-72 mt-4 text-center shadow-lg"
+                className="bg-white rounded-2xl border border-gray-100 p-6 w-64 sm:w-72 mt-4 text-center shadow-lg"
                 style={{ transform: "translateY(10px)" }}
               >
-                <div className="text-sm font-medium text-gray-800">
-                  Data Layer
-                </div>
+                <div className="text-sm font-medium text-gray-800">Data Layer</div>
                 <div className="text-xs text-gray-500 mt-2">
                   Feature stores, pipelines, datasets
                 </div>
               </div>
 
               <div
-                className="bg-white rounded-2xl border border-gray-100 p-6 w-80 mt-4 text-center shadow-lg"
+                className="bg-white rounded-2xl border border-gray-100 p-6 w-72 sm:w-80 mt-4 text-center shadow-lg"
                 style={{ transform: "translateY(20px)" }}
               >
-                <div className="text-sm font-medium text-gray-800">
-                  Infrastructure
-                </div>
+                <div className="text-sm font-medium text-gray-800">Infrastructure</div>
                 <div className="text-xs text-gray-500 mt-2">
                   Compute, orchestration & monitoring
                 </div>

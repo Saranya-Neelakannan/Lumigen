@@ -1,4 +1,3 @@
-// src/components/products/FAQ.jsx
 import React, { useState } from "react";
 
 const Q = [
@@ -20,11 +19,11 @@ export default function FAQ() {
   const [open, setOpen] = useState(null);
   return (
     <section className="py-16 bg-slate-50/60">
-      <div className="max-w-4xl mx-auto px-6">
-        <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-2">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h3 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-2">
           Frequently asked questions
         </h3>
-        <p className="text-sm text-slate-500 mb-6">
+        <p className="text-sm sm:text-base text-slate-500 mb-6">
           Straight answers to the things most institutes ask while evaluating
           Learnverse.
         </p>
@@ -39,7 +38,7 @@ export default function FAQ() {
                 className="w-full text-left flex justify-between items-center gap-4"
                 onClick={() => setOpen(open === idx ? null : idx)}
               >
-                <span className="text-sm font-medium text-slate-900">
+                <span className="text-sm sm:text-base font-medium text-slate-900">
                   {item.q}
                 </span>
                 <span className="text-sky-500 text-xl leading-none">
@@ -47,7 +46,7 @@ export default function FAQ() {
                 </span>
               </button>
               {open === idx && (
-                <p className="text-xs text-slate-600 mt-3 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
                   {item.a}
                 </p>
               )}

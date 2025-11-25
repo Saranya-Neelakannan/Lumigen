@@ -1,4 +1,3 @@
-// src/components/products/Workflow.jsx
 import React from "react";
 
 const STEPS = [
@@ -19,16 +18,16 @@ const STEPS = [
 export default function Workflow() {
   return (
     <section className="py-16 bg-gradient-to-b from-sky-50/60 via-white to-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-2">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h3 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-2">
           How Learnverse rolls out
         </h3>
-        <p className="text-sm text-slate-500 mb-8 max-w-xl">
+        <p className="text-sm sm:text-base text-slate-500 mb-8 max-w-xl">
           From first login to full‑scale adoption, Learnverse is designed to
           feel familiar to teachers and magical to students.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {STEPS.map((s, idx) => (
             <div
               key={s.title}
@@ -42,10 +41,10 @@ export default function Workflow() {
                   Step
                 </span>
               </div>
-              <h4 className="text-base font-semibold text-slate-900">
+              <h4 className="text-base sm:text-lg font-semibold text-slate-900">
                 {s.title}
               </h4>
-              <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
                 {s.desc}
               </p>
             </div>

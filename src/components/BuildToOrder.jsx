@@ -75,7 +75,6 @@ export default function BuildToOrder() {
     };
   }, [isPaused]);
 
-  // Toggle pause/play on click
   const togglePause = () => {
     setIsPaused((prev) => !prev);
   };
@@ -83,7 +82,7 @@ export default function BuildToOrder() {
   return (
     <section
       id="pillar1"
-      className="relative py-24 bg-gradient-to-b from-white via-blue-50 to-white overflow-hidden"
+      className="relative py-24 bg-gradient-to-b from-white via-blue-50 to-white overflow-visible"
       aria-labelledby="build-to-order-title"
     >
       <div className="max-w-5xl mx-auto px-6 md:px-12 text-center relative">
@@ -93,7 +92,6 @@ export default function BuildToOrder() {
             className="flex-1 text-5xl font-serif font-bold text-gray-900 relative text-center md:text-left"
           >
             The One-Person, Build-to-Order Model
-            <span className="block w-24 h-1 bg-gradient-to-r from-blue-500 via-blue-300 to-blue-600 rounded mt-4 mx-auto md:mx-0" />
             <span className="block text-lg font-light mt-4 italic text-gray-600">
               (The 'Rolls-Royce' Approach)
             </span>
@@ -120,6 +118,20 @@ export default function BuildToOrder() {
           <AnimatePresence mode="wait">
             <HighlightCard key={currentIndex} item={highlights[currentIndex]} />
           </AnimatePresence>
+        </div>
+
+        {/* Reduced space below dots */}
+        <div className="flex justify-center gap-2 mt-6 w-full max-w-lg mx-auto mb-2">
+          {highlights.map((_, idx) => (
+            <button
+              key={idx}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                currentIndex === idx ? "bg-blue-600" : "bg-gray-300 hover:bg-blue-400"
+              }`}
+              aria-label={`Show slide ${idx + 1}`}
+              onClick={() => setCurrentIndex(idx)}
+            />
+          ))}
         </div>
       </div>
     </section>

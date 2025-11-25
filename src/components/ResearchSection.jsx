@@ -29,7 +29,6 @@ const products = [
   },
 ];
 
-// Horizontal slide only variants
 const contentVariants = {
   enter: { opacity: 0, x: 100 },
   center: {
@@ -62,16 +61,13 @@ export default function PillStepsExploreClean() {
   }, []);
 
   return (
-    <section className="max-w-7xl mx-auto p-8 md:flex md:space-x-16">
-      {/* Section Title */}
-      <div className="md:w-72 mb-8 md:mb-0">
-        <h2 className="text-4xl font-serif font-bold mb-8 border-l-4 border-blue-600 pl-4">
+    <section className="max-w-7xl mx-auto p-4 sm:p-8 md:flex md:space-x-10">
+      <div className="md:w-72 mb-6 md:mb-0">
+        <h2 className="text-3xl sm:text-4xl font-serif font-bold mb-6 border-l-4 border-blue-600 pl-4">
           Key Research Focus Areas
         </h2>
-
-        {/* Pills navigation */}
         <nav
-          className="flex flex-col space-y-6"
+          className="flex flex-col space-y-4"
           aria-label="Research Domains Navigation"
           role="tablist"
         >
@@ -84,7 +80,7 @@ export default function PillStepsExploreClean() {
               id={`tab-${index}`}
               tabIndex={activeIndex === index ? 0 : -1}
               onClick={() => setActiveIndex(index)}
-              className={`flex items-center space-x-4 px-6 py-3 rounded-full text-lg font-medium cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-500 transition-colors ${
+              className={`flex items-center space-x-3 px-4 py-2 rounded-full text-base sm:text-lg font-medium cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-500 transition-colors ${
                 activeIndex === index
                   ? "bg-blue-600 text-white shadow-lg"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -115,7 +111,6 @@ export default function PillStepsExploreClean() {
         </nav>
       </div>
 
-      {/* Content Panel */}
       <div className="flex-1 relative min-h-[320px] flex flex-col items-start">
         <AnimatePresence exitBeforeEnter>
           <motion.article
@@ -128,12 +123,12 @@ export default function PillStepsExploreClean() {
             animate="center"
             exit="exit"
             transition={{ duration: 0.5 }}
-            className="bg-white rounded-3xl p-10 shadow-xl max-w-3xl w-full"
+            className="bg-white rounded-3xl p-6 sm:p-10 shadow-xl max-w-3xl w-full"
           >
-            <h3 className="text-3xl font-serif font-semibold mb-4 text-gray-900">
+            <h3 className="text-2xl sm:text-3xl font-serif font-semibold mb-4 text-gray-900">
               {products[activeIndex].title}
             </h3>
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
               {products[activeIndex].description}
             </p>
           </motion.article>
