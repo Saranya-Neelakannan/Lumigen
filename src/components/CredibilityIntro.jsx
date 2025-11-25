@@ -8,7 +8,7 @@ import EthicalImage from "../assets/ethics.jpg";
 const beliefs = [
   {
     title: "Proven > Promised",
-    body: "    We publish methodologies, results and reproducible artifacts so our claims are verifiable.",
+    body: "    We publish methodologies, results and reproducible artifacts to back our technical claims.",
     iconColor: "#6366F1",
     image: ProvenImage,
     alt: "Proven > Promised Illustration",
@@ -80,7 +80,7 @@ export default function CredibilityIntroWithImages() {
         >
           We are a highly technical organization whose expertise is demonstrated
           through transparent engineering — public research, benchmarked
-          systems, and verifiable deployment practices.
+          systems, and deployment practices.
         </motion.p>
       </motion.div>
 

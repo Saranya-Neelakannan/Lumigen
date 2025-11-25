@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../utils/motionPresets";
 
 export default function Hero() {
-  const videoSrc = "/videos/giveAi.mp4";
+  const videoSrc = "/videos/AIManTyping.mp4";
   const useVideo = true;
 
   const [showModal, setShowModal] = useState(false);
@@ -144,17 +144,6 @@ export default function Hero() {
               className="space-y-6"
             >
               <label className="block">
-                <span className="text-gray-700">Name</span>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  placeholder="Your name"
-                  className="m-1 block w-full rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring-2 p-2 focus:ring-blue-500 focus:border-blue-500"
-                />
-              </label>
-
-              <label className="block">
                 <span className="text-gray-700">Email</span>
                 <input
                   type="email"
@@ -164,15 +153,25 @@ export default function Hero() {
                   className="m-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </label>
+              <label className="block">
+                <span className="text-gray-700">Product /Service</span>
+                <input
+                  type="text"
+                  name="productService"
+                  required
+                  placeholder="Your product or service"
+                  className="m-1 block w-full rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring-2 p-2 focus:ring-blue-500 focus:border-blue-500"
+                />
+              </label>
 
               <label className="block">
-                <span className="text-gray-700">Message</span>
-                <textarea
-                  name="message"
-                  rows="5"
+                <span className="text-gray-700">Phone Number</span>
+                <input
+                  type="number"
+                  name="phone"
                   required
-                  placeholder="Your message"
-                  className="mt-2 block w-full rounded-lg border border-gray-400 shadow-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition resize-none"
+                  placeholder="Your phone number"
+                  className="m-1 block w-full rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring-2 p-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </label>
 

@@ -13,7 +13,7 @@ import CredibilityIntro from "./components/CredibilityIntro";
 import ResearchLibrary from "./components/ResearchLibrary";
 import MetricsDashboard from "./components/MetricsDashboard";
 import BuildToOrder from "./components/BuildToOrder";
-import LearnversePage from "./components/LearnversePage";
+import LearnVerseHighlight from "./components/LearnVerseHighlight";
 
 export default function App() {
   return (
@@ -25,12 +25,12 @@ export default function App() {
         <Pillars />
         <Lifecycle />
         <BuildToOrder />
+        <LearnVerseHighlight />
         <ResearchSection />
         <FullStackAI />
         <CredibilityIntro />
         <ResearchLibrary />
         <MetricsDashboard />
-        <LearnversePage />
       </main>
       <Footer />
     </div>

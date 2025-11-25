@@ -61,7 +61,10 @@ export default function PillStepsExploreClean() {
   }, []);
 
   return (
-    <section className="max-w-7xl mx-auto p-4 sm:p-8 md:flex md:space-x-10">
+    <section
+      id="research"
+      className="max-w-7xl mx-auto p-4 sm:p-8 md:flex md:space-x-10"
+    >
       <div className="md:w-72 mb-6 md:mb-0">
         <h2 className="text-3xl sm:text-4xl font-serif font-bold mb-6 border-l-4 border-blue-600 pl-4">
           Key Research Focus Areas
