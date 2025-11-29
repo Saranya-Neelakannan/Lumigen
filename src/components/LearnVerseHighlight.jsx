@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Users, BookOpen, UserCheck, School, Briefcase } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const benefits = [
   {
@@ -39,6 +40,7 @@ const benefits = [
   },
 ];
 export default function LearnVerseShowcase() {
+  const navigate = useNavigate();
   return (
     <section
       id="products"
@@ -56,29 +58,16 @@ export default function LearnVerseShowcase() {
         <p className="text-base sm:text-lg md:text-2xl text-gray-700 font-medium max-w-xl mb-7">
           Education, reimagined with AI. For every role, at every scale.
         </p>
-        <motion.a
-          href="/learnverse"
+        <motion.button
+          type="button"
+          onClick={() => navigate("/learnverse")}
           whileHover={{
             scale: 1.08,
             boxShadow: "0 0 36px 0 #6366f1, 0 2px 18px 0 #60a5fa",
             background:
               "linear-gradient(90deg, #312e81 6%, #2563eb 52%, #60a5fa 98%)",
           }}
-          className="
-    inline-block px-7 py-3
-    rounded-[28px]
-    font-bold tracking-wide text-base sm:text-lg
-    bg-gradient-to-r from-indigo-900 via-blue-700 to-blue-400
-    text-white
-    shadow-[0_2px_18px_0_rgba(99,102,241,0.17)]
-    border-none
-    ring-2 ring-indigo-600/70
-    backdrop-blur-md
-    transition-all duration-200 ease-out
-    drop-shadow-lg
-    relative
-    overflow-hidden
-  "
+          className="inline-block px-7 py-3 rounded-[28px] font-bold tracking-wide text-base sm:text-lg bg-gradient-to-r from-indigo-900 via-blue-700 to-blue-400 text-white shadow-[0_2px_18px_0_rgba(99,102,241,0.17)] border-none ring-2 ring-indigo-600/70 backdrop-blur-md transition-all duration-200 ease-out drop-shadow-lg relative overflow-hidden"
           style={{
             boxShadow: "0 2px 18px 0 #312e8188, 0 0 24px 0 #2563eb88",
             background:
@@ -88,14 +77,10 @@ export default function LearnVerseShowcase() {
         >
           <span
             className="relative z-10 font-bold tracking-wider text-white drop-shadow"
-            style={{
-              textShadow: "0 1px 10px #2563eb99",
-            }}
+            style={{ textShadow: "0 1px 10px #2563eb99" }}
           >
             Explore LearnVerse
           </span>
-
-          {/* Glass neon edge */}
           <span
             className="absolute inset-0 pointer-events-none rounded-[28px]"
             style={{
@@ -104,7 +89,7 @@ export default function LearnVerseShowcase() {
               zIndex: 0,
             }}
           />
-        </motion.a>
+        </motion.button>
       </div>
 
       {/* Glassmorphic card grid, fully responsive */}

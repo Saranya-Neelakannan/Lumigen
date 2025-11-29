@@ -1,29 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/lumigentranslogo.png";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  // Close menu when clicking a link
+  const onHome = location.pathname === "/";
+  const ctaLabel = onHome ? "Visit LearnVerse" : "Visit Home";
+
   const handleCloseMenu = () => setOpen(false);
 
-  // Prevent background scroll when menu is open (optional)
-  React.useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [open]);
 
+  const handleCtaClick = () => {
+    if (onHome) {
+      navigate("/learnverse");
+    } else {
+      navigate("/");
+    }
+    handleCloseMenu();
+  };
+
   return (
     <header className="fixed w-full top-0 z-40 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="Lumigen Labs" className="h-12 sm:h-16 w-auto" />
+          <img src={logo} alt="Lumigen Labs" className="h-24 sm:h-16 w-24" />
           <span className="text-lg font-semibold text-textDark">
             Lumigen Labs
           </span>
@@ -41,12 +50,12 @@ export default function Header() {
             Research
           </a>
 
-          <a
-            href="#work"
+          <button
+            onClick={handleCtaClick}
             className="ml-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-accentFrom to-accentTo shadow-sm"
           >
-            Get Started
-          </a>
+            {ctaLabel}
+          </button>
         </nav>
 
         {/* Mobile menu button */}
@@ -77,7 +86,7 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile side menu overlay */}
+      {/* Mobile overlay */}
       <div
         className={`fixed inset-0 bg-black/30 z-30 ${
           open ? "block" : "hidden"
@@ -86,7 +95,7 @@ export default function Header() {
         onClick={handleCloseMenu}
       />
 
-      {/* Mobile side menu sliding panel */}
+      {/* Mobile side menu */}
       <div
         className={`fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white z-40 shadow-lg transition-transform duration-300 ${
           open ? "translate-x-0" : "translate-x-full"
@@ -103,16 +112,12 @@ export default function Header() {
           <a href="#research" className="py-2" onClick={handleCloseMenu}>
             Research
           </a>
-          <a href="#contact" className="py-2" onClick={handleCloseMenu}>
-            Contact
-          </a>
-          <a
-            href="#work"
-            className="py-2 inline-block rounded-full text-white bg-gradient-to-r from-accentFrom to-accentTo px-4 text-center"
-            onClick={handleCloseMenu}
+          <button
+            onClick={handleCtaClick}
+            className="py-2 mt-2 inline-block rounded-full text-white bg-gradient-to-r from-accentFrom to-accentTo px-4 text-center"
           >
-            Get Started
-          </a>
+            {ctaLabel}
+          </button>
         </div>
       </div>
     </header>

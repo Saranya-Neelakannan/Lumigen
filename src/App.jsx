@@ -14,23 +14,36 @@ import ResearchLibrary from "./components/ResearchLibrary";
 import MetricsDashboard from "./components/MetricsDashboard";
 import BuildToOrder from "./components/BuildToOrder";
 import LearnVerseHighlight from "./components/LearnVerseHighlight";
+import LearnVersePage from "./components/LearnversePage";
+import { Routes, Route } from "react-router-dom";
+
+function LandingPage() {
+  return (
+    <>
+      <Hero />
+      <WhatWeAre />
+      <Pillars />
+      <Lifecycle />
+      <BuildToOrder />
+      <LearnVerseHighlight />
+      <ResearchSection />
+      <FullStackAI />
+      <CredibilityIntro />
+      <ResearchLibrary />
+      <MetricsDashboard />
+    </>
+  );
+}
 
 export default function App() {
   return (
     <div className="font-sans bg-softWhite text-textDark">
       <Header />
       <main>
-        <Hero />
-        <WhatWeAre />
-        <Pillars />
-        <Lifecycle />
-        <BuildToOrder />
-        <LearnVerseHighlight />
-        <ResearchSection />
-        <FullStackAI />
-        <CredibilityIntro />
-        <ResearchLibrary />
-        <MetricsDashboard />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/learnverse" element={<LearnVersePage />} />
+        </Routes>
       </main>
       <Footer />
     </div>
